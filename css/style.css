@@ -88,10 +88,10 @@ body {
     padding: 0em;
   }
 
-.card footer p{
+  .card footer p{
   font-size: 1.5em;
   line-height: 0; /*a little confused on the line-height concept, my calculation always set my text too low. 
   Setting the line-height to 0 was my best result ¯\_(ツ)_/¯ */
-}
+  }
   
  
