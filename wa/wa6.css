@@ -14,7 +14,7 @@ body {
     width: 250px
  }
 
-.box{
+.score-ticker{
     content: url(/../img/score-ticker.png);
  }
 
