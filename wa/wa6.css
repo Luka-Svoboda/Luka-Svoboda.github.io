@@ -1,14 +1,54 @@
 body {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
     background-image: url(/../img/david-beckham.webp);
     background-repeat: no-repeat;
 }
 
-.fifa-logo {
-    background-image: url(/../img/fifa.png);
+.sky-sports-logo {
+    position: absolute;
+    bottom: 1mm;
+    right: 5mm;
+    content: url(/../img/sky-sports.png);
+    width: 250px
  }
 
 .box{
-    background-image: url(/../img/download.png)
+    content: url(/../img/score-ticker.png);
  }
 
+ .team-ENG-bg {
+    position: absolute;
+    top: 24px;
+    left: 33px;
+    background-color: black;
+    width: 80px;
+    height: 34px;
+ }
+
+ .ENG-text {
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    top: 4px;
+    left: 44px;
+ }
+
+ .team-GRC-bg {
+    position: absolute;
+    top: 24px;
+    left: 199px;
+    background-color: black;
+    width: 80px;
+    height: 34px;
+ }
+
+ .GRC-text {
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    top: 4px;
+    left: 211px;
+ }
  
