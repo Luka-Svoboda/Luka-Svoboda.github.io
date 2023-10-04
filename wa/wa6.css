@@ -18,7 +18,7 @@ body {
     content: url(/../img/score-ticker.png);
  }
 
- .team-ENG-bg {
+ .team-ENG-bgd {
     position: absolute;
     top: 24px;
     left: 33px;
@@ -35,7 +35,7 @@ body {
     left: 44px;
  }
 
- .team-GRC-bg {
+ .team-GRC-bgd {
     position: absolute;
     top: 24px;
     left: 199px;
