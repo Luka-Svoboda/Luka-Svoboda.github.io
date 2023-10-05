@@ -17,7 +17,7 @@ article {
   margin: 0px auto;
   position: relative;
   background: linear-gradient(to bottom, #ffffff, #ffffffd4 80%, #00000028 90%);
-  background-image: url(/../img/top-image.png), url(/../img/bottom-image.png);
+  background-image: url(/top-image.png), url(/bottom-image.png);
     background-position: center top, center bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -45,7 +45,7 @@ h1 {
   padding: 44px 0;
   color: white;
   text-shadow: 1px 1px 1px black;
- background-image: url(/../img/logo.png);
+ background-image: url(/logo.png);
 }
 
 
