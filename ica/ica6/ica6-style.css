@@ -16,7 +16,7 @@ article {
   height: 297mm;
   margin: 0px auto;
   position: relative;
-  background: linear-gradient(to bottom, #ffffff, #ffffffd4 80%, #00000028 90%);
+  background: linear-gradient(to bottom, #f5f5f5, #ffffffd4 80%, #00000028 90%);
   background-image: url(top-image.png), url(bottom-image.png);
     background-position: center top, center bottom;
     background-repeat: no-repeat;
