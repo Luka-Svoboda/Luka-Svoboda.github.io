@@ -1,4 +1,89 @@
-body {
+
+  @media only screen and (min-width: 500px) {
+    body {
+      background-color: #fff;
+      color: #333;
+      margin: 0;
+      font: 1.2em / 1.2 Arial, Helvetica, sans-serif;
+    }
+  
+    img {
+        max-width: 100%;
+        display: block;
+    }
+    
+    .logo {
+      font-size: 200%;
+      padding: 50px 20px;
+      margin: 0 auto;
+      max-width: 980px;
+    }
+    
+    .grid {
+      margin: 0 auto;
+      padding: 0 20px;
+      max-width: 980px;
+    }
+    
+    nav {
+      background-color: #000;
+      padding: .5em 1em;
+      text-align: center;
+      width: 100%;
+      position: sticky;
+      top: 0px;
+    }
+    
+    nav ul {
+      display: flex;
+      justify-content: space-around;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav a {
+      display: inline;
+      color: #fff;
+      padding: 0;
+      margin: 0;
+      text-decoration: none;
+      font-size: 17px;
+    }
+  
+    li {
+      display: inline;
+    }
+    
+    .photos {
+      list-style: grid;
+      column-count: 2;
+      column-gap: 1px;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .feature {
+        width: 200px;
+        float:left;
+        padding: px;
+    }
+  
+    article {
+      float:left;
+      width: 75%;
+    }
+  
+    aside {
+      display: grid;
+      padding: 1px;
+    }
+    
+}
+
+
+@media only screen and (max-width: 500px) {
+
+  body {
     background-color: #fff;
     color: #333;
     margin: 0;
@@ -6,6 +91,8 @@ body {
   }
 
   img {
+    display: flex;
+    flex-direction: column;
       max-width: 100%;
       display: block;
   }
@@ -25,27 +112,56 @@ body {
   
   nav {
     background-color: #000;
-    padding: .5em;
+    padding: .5em 1em;
+    text-align: center;
+    width: 100%;
+    position: sticky;
+    top: 0px;
   }
   
   nav ul {
+    display: flex;
+    justify-content: space-around;
     margin: 0;
     padding: 0;
-    list-style: none;
   }
   
   nav a {
+    display: inline;
     color: #fff;
+    padding: 0;
+    margin: 0;
     text-decoration: none;
-    padding: .5em 1em;
+    font-size: 17px;
+  }
+
+  li {
+    display: inline;
   }
   
   .photos {
-    list-style: none;
+    list-style: grid;
+    column-count: 2;
+    column-gap: 1px;
     margin: 0;
     padding: 0;
   }
 
   .feature {
       width: 200px;
+      float:left;
+      padding: 15px;
   }
+
+  article {
+    float:left;
+    width: 75%;
+  }
+
+  aside {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 1px;
+  }
+
+}
