@@ -65,7 +65,8 @@
     .feature {
         width: 200px;
         float:left;
-        padding: px;
+        padding-right: 15px;
+        padding-bottom: 15px;
     }
   
     article {
@@ -91,7 +92,7 @@
   }
 
   img {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
       max-width: 100%;
       display: block;
@@ -120,14 +121,14 @@
   }
   
   nav ul {
-    display: flex;
+    display: inline-flex;
+    flex-direction: column;
     justify-content: space-around;
     margin: 0;
     padding: 0;
   }
   
   nav a {
-    display: inline;
     color: #fff;
     padding: 0;
     margin: 0;
@@ -136,7 +137,8 @@
   }
 
   li {
-    display: inline;
+    display: inline-flex;
+    flex-direction: column;
   }
   
   .photos {
@@ -150,7 +152,8 @@
   .feature {
       width: 200px;
       float:left;
-      padding: 15px;
+      padding-right: 15px;
+      padding-bottom: 15px;
   }
 
   article {
