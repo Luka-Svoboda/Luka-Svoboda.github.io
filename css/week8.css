@@ -1,0 +1,54 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: tan;
+    font-family: Monaco, monospace;
+}
+
+h1 {
+    color: #431c53;
+}
+
+nav{
+    height: 50vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:40px;
+    background-color: darkslateblue;
+}
+nav a{
+    width:10vw;
+    text-align: center;
+    text-decoration: none;
+    color:white;
+}
+
+
+img{
+    width:30vw;
+    height: 35vh;
+}
+
+#red-ball{
+    background-color: black;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    position: absolute;
+    left:50%;
+    top:70%;
+
+    .wrap:hover & {
+    transform: scale(6);
+  }
+}
+
+#red-ball:hover {
+    background-color: #431c53;
+    width: 80px;
+    transition: all 2s; 
+}
+
+
