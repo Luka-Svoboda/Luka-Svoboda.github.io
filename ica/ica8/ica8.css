@@ -41,12 +41,12 @@ body{
     }
 
     50% {
+        margin-top: 50%;
         color: aquamarine;
-        font-size: 2vw;
     }
 
     to {
-        margin-left: 0%;
+        margin-left: 10%;
         width:50%;
     }
 }
