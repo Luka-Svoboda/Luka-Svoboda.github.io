@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        text-align: center;
+        font-size: 30px;
+        color: darkred;
+    }
+</style>
+<body>
+    <button id="colorButton">Change Background Color</button>
+    
+    <p id="textParagraph"><strong>CLICK ME</strong></p>
+    
+    <script>
+        document.getElementById('colorButton').addEventListener('click', function() {
+            document.body.style.backgroundColor = 'aqua';
+        });
+
+    
+        document.getElementById('textParagraph').addEventListener('click', function() {
+            this.innerHTML = "HAH! Bozo did you really just take orders from a website???";
+        });
+    </script>
+</body>
+</html>
