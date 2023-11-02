@@ -9,7 +9,8 @@
     <style>
       body {
         font-family: helvetica, sans-serif;
-        width: 350px;
+        width: auto;
+        background-color: sandybrown;
       }
 
       label {
@@ -17,19 +18,25 @@
       }
 
       div {
+        text-align: center;
         padding-bottom: 20px;
+        width: 100%;
       }
 
       input[type="text"] {
         padding: 5px;
-        width: 150px;
+        width: 50%;
+        text-align: center;
       }
 
       p {
-        background: #ffc125;
+        background: #e27fe6;
         color: #5e2612;
         padding: 10px;
         visibility: hidden;
+        text-align: center;
+        width: 50%;
+        margin-left: 25%;
       }
     </style>
   </head>
@@ -37,6 +44,8 @@
   <body>
     <div>
       <label for="customname">Enter custom name:</label>
+      <br>
+      <br>
       <input id="customname" type="text" placeholder="" />
     </div>
     <div>
@@ -51,6 +60,6 @@
     <!-- Thanks a lot to Willy Aguirre for his help with the code for this assessment -->
     <p class="story"></p>
 
-    <script type="javascript" src="/main.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
