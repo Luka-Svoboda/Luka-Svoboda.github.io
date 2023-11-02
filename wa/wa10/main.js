@@ -7,26 +7,21 @@ function randomValueFromArray(array){
   return array[random];
 }
 
-const storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day."
-const insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas" ]
-const insertY = ["the soup kitchen", "Disneyland", "the White House"]
-const insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"]
+const storyText = "It was 10,379 fahrenheit outside, so :insertx: took a drive in their 2014 For Focus ST with a stage 1+ tune, wing risers, a COBB short shifter, and a full, sounerous, Tseudo Cat-back exhaust. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 8 Billion pounds, and they hadn't had their meds this morning."
+const insertX = ["Kai Cenat", "Baby Gronk", "Skibbity Toilet"]
+const insertY = ["Your childhood home", "The AMP House", "Lil Cesars"]
+const insertZ = ["surprisingly, immediately burnt to a complete crisp", "yelled gyyyat damm! and dissapeared into dust", "simultaneously sneezed and farted, causing their head to explode"]
 
-
-newStory = newStory.replace(':insertx:', randomValueFromArray(insertX));
-newStory = newStory.replace(':inserty:', randomValueFromArray(insertY));
-newStory = newStory.replace(':insertz:', randomValueFromArray(insertZ));
 
 randomize.addEventListener('click', result);
 
 function result() {
     let newStory = storyText;
-
     const xItem = randomValueFromArray(insertX);
     const yItem = randomValueFromArray(insertY);
     const zItem = randomValueFromArray(insertZ);
 
-    newStory = newStory.replace(':insertx:', xItem);
+    newStory = newStory.replaceAll(':insertx:', xItem);
     newStory = newStory.replace(':inserty:', yItem);
     newStory = newStory.replace(':insertz:', zItem);
 
@@ -37,12 +32,11 @@ function result() {
     }
 
   if(document.getElementById("uk").checked) {
-    const weight = Math.round(300/14) + "stone";
-    const temperature =  Math.round((94-32) * 5 / 9) + "centigrade";
+    const weight = Math.round(300/14) + " stone";
+    const temperature =  Math.round((94-32) * 5 / 9) + " centigrade";
     newStory = newStory.replace('94 fahrenheit', temperature);
     newStory = newStory.replace('300 pounds', weight);
   }
-
 
   story.textContent = newStory;
   story.style.visibility = 'visible';
