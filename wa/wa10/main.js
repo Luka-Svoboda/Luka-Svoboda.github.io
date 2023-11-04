@@ -32,8 +32,8 @@ function result() {
     }
 
   if(document.getElementById("uk").checked) {
-    const weight = Math.round(300/14) + " stone";
-    const temperature =  Math.round((94-32) * 5 / 9) + " centigrade";
+    const weight = Math.round(1400/14) + " stone";
+    const temperature =  Math.round((6000-32) * 5 / 9) + " centigrade";
     newStory = newStory.replace('6000 fahrenheit', temperature);
     newStory = newStory.replace('1400 pounds', weight);
   }
