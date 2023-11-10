@@ -5,16 +5,15 @@ h1 {
 }
 
 body {
-  width: 640px;
+  width: 800px;
   margin: 0 auto;
-  background-image: url ("/images/flames.jpg");
-
+  background-image: '/wa/wa11/gallery-start/images/flames.jpg';
 }
 
 .full-img {
   position: relative;
   display: block;
-  width: 700px;
+  width: 800px;
   height: 500px;
 }
 
@@ -22,8 +21,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 640px;
-  height: 480px;
+  width: 800px;
+  height: 500px;
   background-color: rgba(0,0,0,0);
 }
 
@@ -40,9 +39,16 @@ button {
 }
 
 .thumb-bar img {
+  transition: box-shadow .3s;
+  border-radius:10px;
+  background: #fff;
   display: block;
   width: 20%;
   float: left;
   cursor: crosshair;
+}
+
+.thumb-bar img:hover {
+  box-shadow: 0 0 11px rgba(0, 0, 0, 0.78); 
 }
 
