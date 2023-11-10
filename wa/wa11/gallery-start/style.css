@@ -4,14 +4,28 @@ h1 {
   color: darkblue;
 }
 
+h2 {
+  font-family: helvetica, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: darkblue;
+  line-height: 0px;
+}
+
 body {
   width: 800px;
   margin: 0 auto;
-  background-image: '/wa/wa11/gallery-start/images/flames.jpg';
+  background-image: linear-gradient(to right, beige, lightblue);
+}
+
+#overlay-image {
+  position: absolute;
+  display: block;
+  width: 800px;
+  height: 500px;
 }
 
 .full-img {
-  position: relative;
+  position: absolute;
   display: block;
   width: 800px;
   height: 500px;
@@ -31,16 +45,16 @@ button {
   background: black;
   color:aliceblue;
   text-shadow: 1px 1px 1px grey;
-  border: 1px solid #ff0000;
+  border: 2px solid #361551;
   position: absolute;
-  cursor: help;
+  cursor: pointer;
   top: 4px;
   left: 4px;
 }
 
 .thumb-bar img {
+  margin-top: 500px;
   transition: box-shadow .3s;
-  border-radius:10px;
   background: #fff;
   display: block;
   width: 20%;
