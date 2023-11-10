@@ -38,16 +38,18 @@ for (let i = 0; i < imageFilenames.length; i++) {
 btn.addEventListener('click', function () {
   const currentClassName = btn.getAttribute("class");
 
-  if (currentClassName === "open") {
-    btn.setAttribute("class", "closed");
-    btn.textContent = "Closed";
-    overlayImage.src = 'gallery-start/images/garage.jpg';
-    overlay.style.display = 'block';
-
-  } else {
+  if (currentClassName === "close") {
     btn.setAttribute("class", "open");
     btn.textContent = "Open";
+    overlayImage.src = 'gallery-start/images/garage.jpg';
+    overlay.style.display = 'block';
+    
+
+  } else {
+    btn.setAttribute("class", "close");
+    btn.textContent = "Close";
     overlayImage.src = 'gallery-start/images/transparent.png';
     overlay.style.display = 'none';
+    
   }
 });
