@@ -3,7 +3,7 @@ const thumbBar = document.querySelector('.thumb-bar');
 
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
-const image = document.getElementById("image");
+const overlayImage = document.getElementById("overlay-image");
 
 const imageFilenames = [
   '/wa/wa11/gallery-start/images/porsche.jpg',
@@ -32,30 +32,22 @@ for (let i = 0; i < imageFilenames.length; i++) {
     displayedImage.alt = altText[filename];
   });
 
-  const newImage = document.createElement('img');
-    newImage.setAttribute('src', imageFilenames);
-    newImage.setAttribute('alt', altText);
-    thumbBar.appendChild(imgElement);
+  thumbBar.appendChild(imgElement);
 }
 
+btn.addEventListener('click', function () {
+  const currentClassName = btn.getAttribute("class");
 
-btn.addEventListener('click', function() {
-    const currentClassName = btn.getAttribute("class");
+  if (currentClassName === "open") {
+    btn.setAttribute("class", "closed");
+    btn.textContent = "Closed";
+    overlayImage.src = 'gallery-start/images/garage.jpg';
+    overlay.style.display = 'block';
 
-    if (currentClassName === "dark") {
-        btn.setAttribute("class", "light");
-        btn.textContent = "Lighten";
-
-        image.src = 'https://mobileimages.lowes.com/productimages/fc3b6d0a-52ea-45bc-8782-ae27c5e01f33/41418313.jpg';
-      } else {
-        btn.setAttribute("class", "dark");
-        btn.textContent = "Darken";
-        image.src = "";
-      }
-    });
-    
-    
-    
-    
-    
-    
+  } else {
+    btn.setAttribute("class", "open");
+    btn.textContent = "Open";
+    overlayImage.src = 'gallery-start/images/transparent.png';
+    overlay.style.display = 'none';
+  }
+});
