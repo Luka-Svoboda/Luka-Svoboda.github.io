@@ -3,6 +3,7 @@ const thumbBar = document.querySelector('.thumb-bar');
 
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
+const image = document.getElementById("image");
 
 const imageFilenames = [
   '/wa/wa11/gallery-start/images/porsche.jpg',
@@ -13,7 +14,7 @@ const imageFilenames = [
 ];
 
 const altText = {
-  '/wa/wa11/gallery-start/images/porsche.jpg': 'Porsche Stinger',
+  '/wa/wa11/gallery-start/images/porsche.jpg': 'Porsche 911 GT',
   '/wa/wa11/gallery-start/images/audi.jpg': 'Audi RS4',
   '/wa/wa11/gallery-start/images/pagani.jpg': 'Pagani Huyra',
   '/wa/wa11/gallery-start/images/BMW.jpg': 'E30 BMW M3',
@@ -38,10 +39,23 @@ for (let i = 0; i < imageFilenames.length; i++) {
 }
 
 
-btn.addEventListener('click', () => {
-  if (overlay.style.backgroundColor === 'rgba(0, 0, 0, 0.5)') {
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-  } else {
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-  }
-});
+btn.addEventListener('click', function() {
+    const currentClassName = btn.getAttribute("class");
+
+    if (currentClassName === "dark") {
+        btn.setAttribute("class", "light");
+        btn.textContent = "Lighten";
+
+        image.src = 'https://mobileimages.lowes.com/productimages/fc3b6d0a-52ea-45bc-8782-ae27c5e01f33/41418313.jpg';
+      } else {
+        btn.setAttribute("class", "dark");
+        btn.textContent = "Darken";
+        image.src = "";
+      }
+    });
+    
+    
+    
+    
+    
+    
