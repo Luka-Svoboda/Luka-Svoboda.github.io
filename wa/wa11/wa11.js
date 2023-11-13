@@ -42,14 +42,16 @@ btn.addEventListener('click', function () {
     btn.setAttribute("class", "open");
     btn.textContent = "Open";
     overlayImage.src = 'gallery-start/images/garage.jpg';
+    overlayImage.style.backgroundColor = 'rgba(0,0,0,0)';
     overlay.style.display = 'block';
     
-
   } else {
     btn.setAttribute("class", "close");
     btn.textContent = "Close";
     overlayImage.src = 'gallery-start/images/transparent.png';
+    overlayImage.style.backgroundColor = 'rgba(0,0,0,0.5)';
     overlay.style.display = 'none';
+    
     
   }
 });
