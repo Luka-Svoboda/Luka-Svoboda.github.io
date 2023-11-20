@@ -42,13 +42,18 @@ function displayRandomImage() {
         "pic3.jpeg",
         "pic4.jpeg",
         "pic5.jpeg",
-        "pic6.jpeg",
+        "pic6.png",
         "pic7.jpeg",
         "pic8.jpeg",
-        "pic9.jpeg",
+        "pic9.png",
         "pic10.jpeg",
         "pic11.jpeg",
-        "pic12.jpeg"
+        "pic12.jpeg",
+        "pic16.jpg",
+        "pic17.jpeg",
+        "pic18.jpeg",
+        "pic19.jpeg",
+        "pic20.jpeg"
     ];
 
     
