@@ -43,6 +43,26 @@
       let male = 0;
 
       // Add your code here
+      for (let i = 0; i < cats.length; i++) {
+        motherInfo += cats[i].name;
+        if (i < cats.length - 2) {
+          motherInfo += ', ';
+        } else if (i === cats.length - 2) {
+          motherInfo += ' and ';
+        } else {
+          motherInfo += '. ';
+        }
+      }
+
+      for (let j = 0; j < cats[i].kittens.length; j++) {
+          total++; // Increment total kittens
+          if (cats[i].kittens[j].gender === 'm') {
+            male++; // Increment male kittens
+          }
+        }
+      }
+
+      kittenInfo = `There are ${total} kittens, ${male} male and ${total - male} female.`;
 
       // Don't edit the code below here!
 
