@@ -20,8 +20,6 @@
 
     <section class="preview">
 
-
-
     </section>
 
   </body>
@@ -31,20 +29,33 @@
     let para1 = document.createElement('p');
     let para2 = document.createElement('p');
     let motherInfo = 'The mother cats are called ';
-    let kittenInfo;
+    let kittenInfo = '';
     const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
 
     fetch(requestURL)
-    .then(response => response.text())
-    .then(text => displayCatInfo(text))
+      .then(response => response.json()) 
+      .then(data => displayCatInfo(data));
 
-    function displayCatInfo(catString) {
+    function displayCatInfo(cats) {
       let total = 0;
       let male = 0;
 
-      // Add your code here
+    for (let i = 0; i < cats.length; i++) {
+    for (const kitten of cats[i].kittens) {
+      total++;
+      if (kitten.gender === 'm') {
+        male++;
+      }
+    }
 
-      // Don't edit the code below here!
+    if (i < (cats.length - 1)) {
+      motherInfo += `${ cats[i].name }, `;
+    } else {
+      motherInfo += `and ${ cats[i].name }.`;
+    }
+  }
+
+      kittenInfo = `There are ${total} kittens, ${male} male and ${total - male} female.`;
 
       para1.textContent = motherInfo;
       para2.textContent = kittenInfo;
