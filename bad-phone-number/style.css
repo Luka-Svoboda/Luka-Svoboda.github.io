@@ -1,0 +1,61 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+  
+  #phone-number-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  #button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  #instructions {
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  
+  #error-message {
+    color: red;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  
+  .phone-number-box {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .wrapper {
+    border: 5px red;
+    margin: 20px;
+  }
+
+
+  .p-number-box {
+    border: 2px blue;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  
