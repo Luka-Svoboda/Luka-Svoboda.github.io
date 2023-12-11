@@ -1,69 +1,64 @@
 const phoneInput = document.getElementById('phone-input');
 const startButton = document.getElementById('start-button');
 
-let isRecording = false;
 let currentNumber = 0;
-let minimumYellThreshold = 8; // Minimum average volume for increase
-let maximumYellThreshold = 1; // Maximum average volume for decrease
-let changeThreshold = 4; // Minimum relative volume change for update
-let increaseRate = 1; // Rate of increment per update (adjust for desired speed)
+let microphoneStream;
+let isStartButtonActive = true;
+let previousValue = 0; // Store previous displayed value
+let updateLoopId; // Store requestAnimationFrame ID
 
-// Update the phone number on the screen
-const updateNumber = () => {
-    phoneInput.textContent = currentNumber;
-};
+startButton.addEventListener('click', async () => {
+  if (isStartButtonActive) {
+    try {
+      // Request microphone access, create audio context and analyser node
+      microphoneStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const audioCtx = new AudioContext();
+      const analyser = audioCtx.createAnalyser();
 
-// Start recording audio
-startButton.addEventListener('click', () => {
-    if (!isRecording) {
-        isRecording = true;
-        startButton.textContent = 'Stop Yelling';
+      // Connect microphone stream to analyser and initialize update loop
+      const source = audioCtx.createMediaStreamSource(microphoneStream);
+      source.connect(analyser);
 
-        navigator.mediaDevices.getUserMedia({ audio: true })
-            .then((stream) => {
-                const audioCtx = new AudioContext();
-                const analyser = audioCtx.createAnalyser();
-                const microphone = audioCtx.createMediaStreamSource(stream);
+      const updatePhoneNumber = () => {
+        const frequencyData = new Uint8Array(analyser.frequencyBinCount);
+        analyser.getByteFrequencyData(frequencyData);
 
-                microphone.connect(analyser);
+        // Calculate average sound level and update current number
+        const averageSoundLevel = frequencyData.reduce((acc, val) => acc + val) / frequencyData.length;
+        currentNumber = Math.round(averageSoundLevel / 70 * 9999999999);
+        if (currentNumber > 9999999999) {
+          currentNumber = 9999999999;
+        }
 
-                const interval = setInterval(() => {
-                    if (isRecording) {
-                        const frequencyData = new Uint8Array(analyser.frequencyBinCount);
-                        analyser.getByteFrequencyData(frequencyData);
+        // Update phone input display
+        phoneInput.textContent = currentNumber;
 
-                        const averageVolume = frequencyData.reduce((acc, curr) => acc + curr, 0) / frequencyData.length;
+        // Update previous value if button is not active
+        if (!isStartButtonActive) {
+          previousValue = currentNumber;
+        }
 
-                        // Calculate relative volume difference
-                        const volumeDifference = Math.abs((averageVolume - minimumYellThreshold) / (maximumYellThreshold - minimumYellThreshold));
+        // Schedule next update
+        updateLoopId = requestAnimationFrame(updatePhoneNumber);
+      };
 
-                        // Update number only if change exceeds threshold and increase gradually
-                        if (volumeDifference > changeThreshold) {
-                            if (averageVolume > minimumYellThreshold) {
-                                currentNumber += increaseRate;
-                            } else if (averageVolume < maximumYellThreshold) {
-                                currentNumber -= increaseRate;
-                            }
+      updatePhoneNumber(); // Start update loop
 
-                            // Clamp number within 0-9 range
-                            currentNumber = Math.min(Math.max(currentNumber, 0), 9);
-
-                            updateNumber();
-                        }
-                    } else {
-                        clearInterval(interval);
-                    }
-                }, 50);
-
-                // Stop recording on stop button click
-                startButton.addEventListener('click', () => {
-                    isRecording = false;
-                    startButton.textContent = 'Start Yelling';
-                    clearInterval(interval);
-                });
-            });
-    } else {
-        isRecording = false;
-        startButton.textContent = 'Start Yelling';
+      // Store previous displayed value and update button text/state
+      previousValue = phoneInput.textContent;
+      startButton.textContent = 'Set';
+      isStartButtonActive = false;
+    } catch (error) {
+      console.error(error);
     }
+  } else {
+    // Stop microphone access and update phone input with stored value
+    microphoneStream.getTracks().forEach(track => track.stop());
+    cancelAnimationFrame(updateLoopId); // Stop update loop
+    phoneInput.textContent = previousValue; // Set to previously stored value
+
+    // Update button text and state
+    startButton.textContent = 'Start';
+    isStartButtonActive = true;
+  }
 });
