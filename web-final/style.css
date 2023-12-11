@@ -20,7 +20,7 @@ body {
     width: 100px;
     align-self: center;
     padding: 10px 20px;
-    border: 10px, black;
+    border: 10px black;
     border-radius: 5px;
     cursor: pointer;
 }
