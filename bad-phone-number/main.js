@@ -25,9 +25,9 @@ startButton.addEventListener('click', async () => {
 
         // Calculate average sound level and update current number
         const averageSoundLevel = frequencyData.reduce((acc, val) => acc + val) / frequencyData.length;
-        currentNumber = Math.round(averageSoundLevel / 70 * 9);
-        if (currentNumber > 9) {
-          currentNumber = 9;
+        currentNumber = Math.round(averageSoundLevel / 70 * 9999999999);
+        if (currentNumber > 9999999999) {
+          currentNumber = 9999999999;
         }
 
         // Update phone input display
