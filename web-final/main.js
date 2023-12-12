@@ -1,10 +1,10 @@
 const phoneInput = document.getElementById('phone-input');
-const startButton = document.getElementById('start-button');
+const startButton = document.getElementById('startButton');
 
-let currentNumber = 0;
+let currentNumber = "0000000000";
 let microphoneStream;
 let isStartButtonActive = true;
-let previousValue = 0; // Store previous displayed value
+let previousValue = "0000000000"; // Store previous displayed value
 let updateLoopId; // Store requestAnimationFrame ID
 
 startButton.addEventListener('click', async () => {
@@ -46,7 +46,7 @@ startButton.addEventListener('click', async () => {
 
       // Store previous displayed value and update button text/state
       previousValue = phoneInput.textContent;
-      startButton.textContent = 'Set';
+      startButton.textContent = 'Submit';
       isStartButtonActive = false;
     } catch (error) {
       console.error(error);
@@ -60,5 +60,8 @@ startButton.addEventListener('click', async () => {
     // Update button text and state
     startButton.textContent = 'Start';
     isStartButtonActive = true;
+    window.alert(`The phone number you yelled is: ${currentNumber}`);
   }
 });
+
+

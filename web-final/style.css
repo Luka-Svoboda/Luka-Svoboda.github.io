@@ -1,31 +1,47 @@
 body {
     font-family: sans-serif;
     text-align: center;
-}
-
-#phone-input {
+    margin: 20px;
+    background: linear-gradient(to left, red, orange, yellow);
+  }
+  
+  #phone-input {
     display: inline-block;
     font-size: 32px;
     width: 50%;
-    align-self: center;
-    font-weight: bold;
-    border: 1px solid #000000;
+    border: 1px solid #b35959;
     padding: 10px;
-}
-
-#start-button {
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  #startButton {
     background-color: #4CAF50;
     color: white;
-    margin-top: 20px;
-    width: 100px;
-    align-self: center;
     padding: 10px 20px;
-    border: 10px black;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.group {
+    margin-top: 20px;
+  }
+  
+  .group {
     display: flex;
     flex-direction: column;
-}
+    align-items: center;
+  }
+  
+  #banner {
+    background-color: #ffcc00;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
+  }
+  
+  .active {
+    display: block;
+  }
+  
