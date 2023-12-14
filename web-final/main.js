@@ -30,6 +30,12 @@ startButton.addEventListener('click', async () => {
           currentNumber = 9999999999;
         }
 
+        currentNumber = String(currentNumber).padStart(10, '0');
+
+        // Update phone input display
+        phoneInput.textContent = currentNumber;
+  
+
         // Update phone input display
         phoneInput.textContent = currentNumber;
 
@@ -63,5 +69,7 @@ startButton.addEventListener('click', async () => {
     window.alert(`The phone number you yelled is: ${currentNumber}`);
   }
 });
+
+
 
 
